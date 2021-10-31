@@ -1,7 +1,3 @@
-#!/usr/bin/python
-import subprocess
-
-
 def deploy_hadoop():
     print('Initiating Apache Hadoop...' + '\n' + '-' * 30)
     return
