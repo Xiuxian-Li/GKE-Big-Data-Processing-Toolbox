@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: spark_master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: spark_master
+  template:
+    metadata:
+      labels:
+        component: spark_master
+    spec:
+      containers:
+        - name: spark_master
+          image: xiuxianli/spark
+          command:
+            [
+              "/spark_master",
+            ]
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m

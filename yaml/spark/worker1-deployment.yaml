@@ -1,0 +1,26 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: spark_worker_1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: spark_worker_1
+  template:
+    metadata:
+      labels:
+        component: spark_worker_1
+    spec:
+      containers:
+        - name: spark_worker_1
+          image: xiuxianli/spark
+          command:
+            [
+              "/spark_worker",
+            ]
+          ports:
+            - containerPort: 8081
+          resources:
+            requests:
+              cpu: 100m
