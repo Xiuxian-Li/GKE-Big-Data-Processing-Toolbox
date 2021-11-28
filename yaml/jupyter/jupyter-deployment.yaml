@@ -4,8 +4,8 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "2"
   labels:
-    app: jupyter
-  name: jupyter
+    app: jupyter-notebook
+  name: jupyter-notebook
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -13,7 +13,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: jupyter
+      app: jupyter-notebook
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -23,23 +23,24 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: jupyter
+        app: jupyter-notebook
     spec:
       containers:
-        - args:
-            - --NotebookApp.token=''
-          command:
-            - start-notebook.sh
-          image: xiuxianli/jupyter
-          imagePullPolicy: Always
-          name: jupyter
-          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
-          ports:
-            - containerPort: 8888
-              protocol: TCP
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
+      - args:
+        - --NotebookApp.token=''
+        command:
+        - start-notebook.sh
+        image: xiuxianli/jupyter
+        imagePullPolicy: Always
+        name: jupyter
+        ports:
+        - containerPort: 8888
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
+      securityContext: {}
       terminationGracePeriodSeconds: 30

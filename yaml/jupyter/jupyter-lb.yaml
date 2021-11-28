@@ -4,18 +4,18 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
   finalizers:
-    - service.kubernetes.io/load-balancer-cleanup
+  - service.kubernetes.io/load-balancer-cleanup
   labels:
-    app: jupyter
-  name: jupyter-lb
+    app: jupyter-notebook
+  name: jupyter-notebook-lb
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
   ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 8888
+  - port: 80
+    protocol: TCP
+    targetPort: 8888
   selector:
-    app: jupyter
+    app: jupyter-notebook
   sessionAffinity: None
   type: LoadBalancer

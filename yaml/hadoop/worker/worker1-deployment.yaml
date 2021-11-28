@@ -33,10 +33,11 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
           name: hadoop-worker-node1
-          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
+          resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
+      securityContext: {}
       terminationGracePeriodSeconds: 30

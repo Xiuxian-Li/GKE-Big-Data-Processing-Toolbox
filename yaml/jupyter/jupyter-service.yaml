@@ -4,16 +4,16 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
   labels:
-    app: jupyter
-  name: jupyter
+    app: jupyter-notebook
+  name: jupyter-notebook
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
   ports:
-    - port: 8888
-      protocol: TCP
-      targetPort: 8888
+  - port: 8888
+    protocol: TCP
+    targetPort: 8888
   selector:
-    app: jupyter
+    app: jupyter-notebook
   sessionAffinity: None
   type: NodePort

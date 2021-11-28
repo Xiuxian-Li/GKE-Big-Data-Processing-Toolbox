@@ -1,20 +1,26 @@
+ import webbrowser
+
 def deploy_hadoop():
     print('Initiating Apache Hadoop...' + '\n' + '-' * 30)
+    webbrowser.open('http://example.com') 
     return
 
 
 def deploy_spark():
     print('Initiating Apache Spark...' + '\n' + '-' * 30)
+    webbrowser.open('http://example.com') 
     return
 
 
 def deploy_jupyter():
     print('Initiating Jupyter Notebook...' + '\n' + '-' * 30)
+    webbrowser.open('http://example.com') 
     return
 
 
 def deploy_sonar():
     print('Initiating SonarQube and SonarScanner...' + '\n' + '-' * 30)
+    webbrowser.open('http://example.com') 
     return
 
 
