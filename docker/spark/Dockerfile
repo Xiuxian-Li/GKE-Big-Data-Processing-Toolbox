@@ -16,6 +16,6 @@ RUN mkdir -p /opt && \
     ln -s spark-${SPARK_VERSION}-bin-hadoop2.7 spark && \
     echo Spark ${SPARK_VERSION} installed in /opt
 
-ADD common.sh spark-master spark-worker /
-ADD spark-defaults.conf /opt/spark/conf/spark-defaults.conf
+ADD share.sh master worker /
+ADD spark.conf /opt/spark/conf/spark.conf
 ENV PATH $PATH:/opt/spark/bin
