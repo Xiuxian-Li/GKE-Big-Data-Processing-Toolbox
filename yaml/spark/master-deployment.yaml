@@ -15,10 +15,7 @@ spec:
       containers:
         - name: spark-master
           image: xiuxianli/spark
-          command:
-            [
-              "/spark-master",
-            ]
+          command: ["/spark-master"]
           ports:
             - containerPort: 7077
             - containerPort: 8080
