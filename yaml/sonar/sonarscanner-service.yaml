@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  labels:
+    app: sonar_scanner
+  name: sonar_scanner
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - port: 9000
+      protocol: TCP
+      targetPort: 9000
+  selector:
+    app: sonar_scanner
+  sessionAffinity: None
+  type: NodePort

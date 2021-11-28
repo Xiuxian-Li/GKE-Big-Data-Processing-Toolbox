@@ -19,6 +19,5 @@ ENV HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check=false
 RUN mkdir -p /hadoop/dfs/name
 VOLUME /hadoop/dfs/name
 
-EXPOSE 9870
 EXPOSE 9000
 

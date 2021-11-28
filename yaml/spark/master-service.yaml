@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spark_master
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: webui
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: spark
+      port: 7077
+      protocol: TCP
+      targetPort: 7077
+  selector:
+    component: spark_master
+  sessionAffinity: None
+  type: NodePort

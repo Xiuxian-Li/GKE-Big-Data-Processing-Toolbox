@@ -2,11 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "1"
-  generation: 1
+    deployment.kubernetes.io/revision: "2"
   labels:
-    app: master_node
-  name: master_node
+    app: data_process_toolbox
+  name: data_process_toolbox
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -14,7 +13,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: master_node
+      app: data_process_toolbox
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -24,17 +23,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: master_node
+        app: data_process_toolbox
     spec:
       containers:
-        - image: xiuxianli/hadoop_master
-          ports:
-            - containerPort: 9000
-              protocol: TCP
-            # - containerPort: 9870
-            #   protocol: TCP
-          imagePullPolicy: IfNotPresent
-          name: hadoop_master
+        - image: xiuxianli/data_process_toolbox
+          imagePullPolicy: Always
+          name: data_process_toolbox
           resources:
             {
               ,
