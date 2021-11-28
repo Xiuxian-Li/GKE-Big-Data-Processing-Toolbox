@@ -1,26 +1,26 @@
- import webbrowser
+import webbrowser
 
 def deploy_hadoop():
-    print('Initiating Apache Hadoop...' + '\n' + '-' * 30)
-    webbrowser.open('http://example.com') 
+    print('Access Apache Hadoop at http://34.72.201.49:80' + '\n' + '-' * 30)
+    webbrowser.open('http://34.72.201.49:80') 
     return
 
 
 def deploy_spark():
-    print('Initiating Apache Spark...' + '\n' + '-' * 30)
-    webbrowser.open('http://example.com') 
+    print('Access Apache Spark at http://107.178.210.200:80' + '\n' + '-' * 30)
+    webbrowser.open('http://107.178.210.200:80') 
     return
 
 
 def deploy_jupyter():
-    print('Initiating Jupyter Notebook...' + '\n' + '-' * 30)
-    webbrowser.open('http://example.com') 
+    print('Access Jupyter Notebook at http://34.135.195.24:80' + '\n' + '-' * 30)
+    webbrowser.open('http://34.135.195.24:80') 
     return
 
 
 def deploy_sonar():
-    print('Initiating SonarQube and SonarScanner...' + '\n' + '-' * 30)
-    webbrowser.open('http://example.com') 
+    print('Access SonarQube at http://34.136.28.166:80' + '\n' + '-' * 30)
+    webbrowser.open('http://34.136.28.166:80') 
     return
 
 
