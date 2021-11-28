@@ -1,4 +1,6 @@
 FROM python:latest
-COPY . /usr/src/project
-WORKDIR /usr/src/project
-CMD ["python3","service_direct.py.py"]
+
+COPY service_direct.py /.
+
+ENTRYPOINT ["/bin/sleep","7200000"]
+CMD ["python","service_direct.py.py"]
