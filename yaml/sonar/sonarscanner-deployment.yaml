@@ -30,17 +30,9 @@ spec:
           ports:
             - containerPort: 9000
               protocol: TCP
-          resources:
-            {
-              ,
-            }
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      securityContext:
-        {
-          ,
-        }
       terminationGracePeriodSeconds: 30

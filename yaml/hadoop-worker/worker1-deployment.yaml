@@ -33,17 +33,9 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
           name: worker-node1
-          resources:
-            {
-              ,
-            }
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      securityContext:
-        {
-          ,
-        }
       terminationGracePeriodSeconds: 30
