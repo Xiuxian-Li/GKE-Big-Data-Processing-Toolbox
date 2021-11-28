@@ -35,6 +35,7 @@ spec:
             #   protocol: TCP
           imagePullPolicy: IfNotPresent
           name: hadoop-master
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
