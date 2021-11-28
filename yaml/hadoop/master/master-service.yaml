@@ -3,8 +3,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: master-node
-  name: master-node
+    app: hadoop-master-node
+  name: hadoop-master-node
 spec:
   ports:
     # - port: 9870
@@ -16,5 +16,5 @@ spec:
       protocol: TCP
       targetPort: 9000
   selector:
-    app: master-node
+    app: hadoop-master-node
   type: NodePort

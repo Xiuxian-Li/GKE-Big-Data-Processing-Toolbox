@@ -5,8 +5,8 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   generation: 1
   labels:
-    app: worker-node0
-  name: worker-node0
+    app: hadoop-master-node
+  name: hadoop-master-node
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -14,7 +14,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: worker-node0
+      app: hadoop-master-node
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -24,15 +24,17 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: worker-node0
+        app: hadoop-master-node
     spec:
       containers:
-        - image: xiuxianli/hadoop_worker
+        - image: xiuxianli/hadoop_master
           ports:
-            - containerPort: 9864
+            - containerPort: 9000
               protocol: TCP
+            # - containerPort: 9870
+            #   protocol: TCP
           imagePullPolicy: IfNotPresent
-          name: worker-node0
+          name: hadoop-master
           command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File

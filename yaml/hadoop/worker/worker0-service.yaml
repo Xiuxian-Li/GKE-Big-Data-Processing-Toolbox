@@ -17,8 +17,3 @@ spec:
     app: worker-node0
   sessionAffinity: None
   type: NodePort
-status:
-  loadBalancer:
-    {
-      ,
-    }

@@ -33,6 +33,7 @@ spec:
           image: xiuxianli/jupyter
           imagePullPolicy: Always
           name: jupyter
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           ports:
             - containerPort: 8888
               protocol: TCP

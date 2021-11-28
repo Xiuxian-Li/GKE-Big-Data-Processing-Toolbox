@@ -1,15 +1,15 @@
 # Hadoop master
-kubectl apply -f yaml/hadoop_master/master-deployment.yaml
-kubectl apply -f yaml/hadoop_master/master-service.yaml
+kubectl apply -f yaml/hadoop/master/master-deployment.yaml
+kubectl apply -f yaml/hadoop/master/master-service.yaml
 kubectl apply -f yaml/hadoop/master/master-lb.yaml
 
 sleep 10
 
 # Hadoop worker
-kubectl apply -f yaml/hadoop_worker/worker0-deployment.yaml
-kubectl apply -f yaml/hadoop_worker/worker0-service.yaml
-kubectl apply -f yaml/hadoop_worker/worker1-deployment.yaml
-kubectl apply -f yaml/hadoop_worker/worker1-service.yaml
+kubectl apply -f yaml/hadoop/worker/worker0-deployment.yaml
+kubectl apply -f yaml/hadoop/worker/worker0-service.yaml
+kubectl apply -f yaml/hadoop/worker/worker1-deployment.yaml
+kubectl apply -f yaml/hadoop/worker/worker1-service.yaml
 
 # Jupyter Notebook
 kubectl apply -f yaml/jupyter/jupyter-deployment.yaml

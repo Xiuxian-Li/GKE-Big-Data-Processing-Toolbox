@@ -27,6 +27,7 @@ spec:
         - image: xiuxianli/sonar_scanner
           imagePullPolicy: IfNotPresent
           name: sonar-scanner
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           ports:
             - containerPort: 9000
               protocol: TCP

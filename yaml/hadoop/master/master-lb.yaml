@@ -3,22 +3,19 @@ kind: Service
 metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
+  finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
   labels:
-    app: worker-node1
-  name: worker-node1
+    app: hadoop-master-node
+  name: hadoop-master-node-lb
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
   ports:
-    - port: 9864
+    - port: 80
       protocol: TCP
-      targetPort: 9864
+      targetPort: 9870
   selector:
-    app: worker-node1
+    app: hadoop-master-node
   sessionAffinity: None
-  type: NodePort
-status:
-  loadBalancer:
-    {
-      ,
-    }
+  type: LoadBalancer

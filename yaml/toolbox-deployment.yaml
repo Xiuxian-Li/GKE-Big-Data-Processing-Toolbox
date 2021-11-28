@@ -29,6 +29,7 @@ spec:
         - image: xiuxianli/data_process_toolbox
           imagePullPolicy: Always
           name: data-process-toolbox
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst

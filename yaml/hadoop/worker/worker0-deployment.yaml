@@ -5,8 +5,8 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   generation: 1
   labels:
-    app: worker-node1
-  name: worker-node1
+    app: hadoop-worder-node0
+  name: hadoop-worder-node0
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -14,7 +14,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: worker-node1
+      app: hadoop-worder-node0
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -24,7 +24,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: worker-node1
+        app: hadoop-worder-node0
     spec:
       containers:
         - image: xiuxianli/hadoop_worker
@@ -32,7 +32,7 @@ spec:
             - containerPort: 9864
               protocol: TCP
           imagePullPolicy: IfNotPresent
-          name: worker-node1
+          name: hadoop-worder-node0
           command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
