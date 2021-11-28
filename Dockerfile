@@ -1,6 +1,4 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y python3
-ADD service_direct.py /app/service_direct.py
-CMD ["/app/service_direct.py"]
-ENTRYPOINT ["python3"]
+FROM python:latest
+COPY . /usr/src/project
+WORKDIR /usr/src/project
+CMD ["python3","service_direct.py.py"]
