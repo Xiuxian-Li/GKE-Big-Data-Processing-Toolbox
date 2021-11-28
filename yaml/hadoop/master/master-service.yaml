@@ -7,10 +7,10 @@ metadata:
   name: hadoop-master-node
 spec:
   ports:
-    # - port: 9870
-    #   name: gui
-    #   protocol: TCP
-    #   targetPort: 9870
+    - port: 9870
+      name: gui
+      protocol: TCP
+      targetPort: 9870
     - port: 9000
       name: internal
       protocol: TCP

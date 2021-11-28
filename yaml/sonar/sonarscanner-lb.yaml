@@ -4,7 +4,7 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
   finalizers:
-    - service.kubernetes.io/load-balancer-cleanup
+  - service.kubernetes.io/load-balancer-cleanup
   labels:
     app: sonar-scanner
   name: sonar-scanner-lb
@@ -12,9 +12,9 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 9000
+  - port: 80
+    protocol: TCP
+    targetPort: 9000
   selector:
     app: sonar-scanner
   sessionAffinity: None

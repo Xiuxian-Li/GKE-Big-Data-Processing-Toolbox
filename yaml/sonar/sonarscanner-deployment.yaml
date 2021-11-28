@@ -24,16 +24,17 @@ spec:
         app: sonar-scanner
     spec:
       containers:
-        - image: xiuxianli/sonar_scanner
-          imagePullPolicy: IfNotPresent
-          name: sonar-scanner
-          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
-          ports:
-            - containerPort: 9000
-              protocol: TCP
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
+      - image: xiuxianli/sonar_scanner
+        imagePullPolicy: IfNotPresent
+        name: sonar-scanner
+        ports:
+        - containerPort: 9000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
+      securityContext: {}
       terminationGracePeriodSeconds: 30
