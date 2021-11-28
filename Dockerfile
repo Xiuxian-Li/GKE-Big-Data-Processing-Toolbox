@@ -1,6 +1,6 @@
-FROM python:latest
-
-COPY service_direct.py /.
-
-ENTRYPOINT ["/bin/sleep","7200000"]
-CMD ["python","service_direct.py.py"]
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y python3
+ADD service_direct.py /app/service_direct.py
+CMD ["/app/service_direct.py"]
+ENTRYPOINT ["python3"]
