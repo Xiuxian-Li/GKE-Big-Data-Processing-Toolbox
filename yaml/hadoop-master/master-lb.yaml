@@ -6,8 +6,8 @@ metadata:
   finalizers:
     - service.kubernetes.io/load-balancer-cleanup
   labels:
-    app: master_node
-  name: master_node_lb
+    app: master-node
+  name: master-node-lb
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
@@ -16,6 +16,6 @@ spec:
       protocol: TCP
       targetPort: 9870
   selector:
-    app: master_node
+    app: master-node
   sessionAffinity: None
   type: LoadBalancer

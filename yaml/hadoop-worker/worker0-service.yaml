@@ -4,8 +4,8 @@ metadata:
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
   labels:
-    app: worker_node_0
-  name: worker_node_0
+    app: worker-node0
+  name: worker-node0
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
@@ -14,7 +14,7 @@ spec:
       protocol: TCP
       targetPort: 9864
   selector:
-    app: worker_node_0
+    app: worker-node0
   sessionAffinity: None
   type: NodePort
 status:

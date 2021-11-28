@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spark_master
+  name: spark-master
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
@@ -15,6 +15,6 @@ spec:
       protocol: TCP
       targetPort: 7077
   selector:
-    component: spark_master
+    component: spark-master
   sessionAffinity: None
   type: NodePort

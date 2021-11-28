@@ -1,23 +1,23 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: spark_master
+  name: spark-master
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: spark_master
+      component: spark-master
   template:
     metadata:
       labels:
-        component: spark_master
+        component: spark-master
     spec:
       containers:
-        - name: spark_master
+        - name: spark-master
           image: xiuxianli/spark
           command:
             [
-              "/spark_master",
+              "/spark-master",
             ]
           ports:
             - containerPort: 7077

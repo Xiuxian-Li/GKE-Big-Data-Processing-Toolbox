@@ -1,23 +1,23 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: spark_worker_0
+  name: spark-worker0
 spec:
   replicas: 2
   selector:
     matchLabels:
-      component: spark_worker_0
+      component: spark-worker0
   template:
     metadata:
       labels:
-        component: spark_worker_0
+        component: spark-worker0
     spec:
       containers:
-        - name: spark_worker_0
+        - name: spark-worker0
           image: xiuxianli/spark
           command:
             [
-              "/spark_worker",
+              "/spark-worker",
             ]
           ports:
             - containerPort: 8081

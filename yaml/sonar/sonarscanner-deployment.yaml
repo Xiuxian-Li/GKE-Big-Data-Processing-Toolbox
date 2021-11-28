@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: sonar_scanner
-  name: sonar_scanner
+    app: sonar-scanner
+  name: sonar-scanner
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -11,7 +11,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: sonar_scanner
+      app: sonar-scanner
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -21,12 +21,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: sonar_scanner
+        app: sonar-scanner
     spec:
       containers:
         - image: xiuxianli/sonar_scanner
           imagePullPolicy: IfNotPresent
-          name: sonar_scanner
+          name: sonar-scanner
           ports:
             - containerPort: 9000
               protocol: TCP

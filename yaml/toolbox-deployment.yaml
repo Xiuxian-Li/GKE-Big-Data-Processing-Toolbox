@@ -4,8 +4,8 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "2"
   labels:
-    app: data_process_toolbox
-  name: data_process_toolbox
+    app: data-process-toolbox
+  name: data-process-toolbox
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -13,7 +13,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: data_process_toolbox
+      app: data-process-toolbox
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -23,12 +23,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: data_process_toolbox
+        app: data-process-toolbox
     spec:
       containers:
         - image: xiuxianli/data_process_toolbox
           imagePullPolicy: Always
-          name: data_process_toolbox
+          name: data-process-toolbox
           resources:
             {
               ,

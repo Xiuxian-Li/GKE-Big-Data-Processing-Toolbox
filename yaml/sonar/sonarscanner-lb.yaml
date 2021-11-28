@@ -6,8 +6,8 @@ metadata:
   finalizers:
     - service.kubernetes.io/load-balancer-cleanup
   labels:
-    app: sonar_scanner
-  name: sonar_scanner_lb
+    app: sonar-scanner
+  name: sonar-scanner-lb
   namespace: default
 spec:
   externalTrafficPolicy: Cluster
@@ -16,6 +16,6 @@ spec:
       protocol: TCP
       targetPort: 9000
   selector:
-    app: sonar_scanner
+    app: sonar-scanner
   sessionAffinity: None
   type: LoadBalancer

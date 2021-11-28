@@ -5,8 +5,8 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   generation: 1
   labels:
-    app: master_node
-  name: master_node
+    app: master-node
+  name: master-node
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -14,7 +14,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: master_node
+      app: master-node
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -24,7 +24,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: master_node
+        app: master-node
     spec:
       containers:
         - image: xiuxianli/hadoop_master
@@ -34,18 +34,10 @@ spec:
             # - containerPort: 9870
             #   protocol: TCP
           imagePullPolicy: IfNotPresent
-          name: hadoop_master
-          resources:
-            {
-              ,
-            }
+          name: hadoop-master
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      securityContext:
-        {
-          ,
-        }
       terminationGracePeriodSeconds: 30
